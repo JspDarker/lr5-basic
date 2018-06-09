@@ -13,4 +13,32 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+Auth::routes();
+
+#Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/home', [
+    'uses'=>'HomeController@index',
+    'as' => 'home'
+]);
+#->middleware('check.age')
+
+Route::get('/logout', 'HomeController@logout')->name('logout');
+
+Route::get('error', function() {
+   return view('exceptions.error');
+})->name('error');
+
+
+/*---------------------------------------------------------
+|
+|
+|
+|
+|
+|
+
+
+ */
