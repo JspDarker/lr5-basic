@@ -33,10 +33,10 @@ Route::get('error', function() {
 
 
 /*---------------------------------------------------------
+| when open project
+|   /laravel where execute | php artisan serve & where laravel query
 |
-|
-|
-|
+|   /var/www/html/git-lr5/lr5-basic$: where async(dong bo) GitHub remote
 |
 |
 
