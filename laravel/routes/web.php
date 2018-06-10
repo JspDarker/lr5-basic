@@ -39,6 +39,12 @@ Route::get('error', function() {
 |   /var/www/html/git-lr5/lr5-basic$: where async(dong bo) GitHub remote
 |
 |
-
-
  */
+
+//===========================AJAX=======
+
+Route::get('ajax',function(){
+    return view('ajax.json');
+});
+
+Route::get('search', 'AjaxController@search');
