@@ -28,13 +28,13 @@ class HomeController extends Controller
     }
 
 
-    public function logout(Request $request)
-    {
-        auth()->logout();
-
-        $request->session()->invalidate();
-
-        return "you was LOGOUT";
-    }
+//    public function logout(Request $request)
+//    {
+//        auth()->logout();
+//
+//        $request->session()->invalidate();
+//
+//        return "you was LOGOUT";
+//    }
 
 }

@@ -25,7 +25,7 @@ Route::get('/home', [
 ]);
 #->middleware('check.age')
 
-Route::get('/logout', 'HomeController@logout')->name('logout');
+#Route::get('/logout', 'HomeController@logout')->name('logout');
 
 Route::get('error', function() {
    return view('exceptions.error');
@@ -49,3 +49,4 @@ Route::get('ajax',function(){
 
 Route::get('search', 'AjaxController@search');
 Route::get('emailjs', 'AjaxController@emailRegistration');
+Route::get('ajaxlogin', 'AjaxController@emailLogin');

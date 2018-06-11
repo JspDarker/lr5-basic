@@ -16,7 +16,9 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
+                                    <span class="help-block">
+                                        <b></b>
+                                    </span>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -51,7 +53,7 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button id="loginAjax" type="submit" class="btn btn-primary">
                                     Login
                                 </button>
 

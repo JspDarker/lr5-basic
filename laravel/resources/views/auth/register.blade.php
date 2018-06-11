@@ -30,7 +30,9 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
+                                    <span class="help-block alert-danger">
+                                        <b></b>
+                                    </span>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>

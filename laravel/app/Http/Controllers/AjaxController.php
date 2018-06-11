@@ -38,29 +38,27 @@ class AjaxController extends Controller
             //TODO: Sql first();
             $sql = DB::table('users')->select('email')->where('email', $email)->first();
 
-            if(count($sql) <= 0) {
-                $res = "You can using Email for register";
+            if(count($sql) != 0) {
+                $res = 'Email exists! please use email difference';
                 return response($res);
             }
-            $res = 'Email exists! please use email difference';
-
-            return response($res);
-
-
-
-
-            /*$b = "You have register with email: $request->email_js";
-
-            return response($b);*/
-
-//            if( ! Auth::attempt(['name' => $request->email_js])) {
-//                return response("BAN DUOC DANG KI: $request->email_js");
-//            }
-//
-//            return response(dd(Auth::attempt(['name' => $request->email_js])));
         }
+    }
 
+    public function emailLogin(Request $request)
+    {
+        if ($request->ajax()) {
+            $res = '';
 
+            $email = $request->email;
+            //TODO: Sql first();
+            $sql = DB::table('users')->select('email')->where('email', $email)->first();
+
+            if(count($sql) == 0) {
+                $res = 'Account invalid so Email not exists!';
+                return response($res);
+            }
+        }
     }
 
 }
