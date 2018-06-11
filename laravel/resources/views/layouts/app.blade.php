@@ -75,6 +75,51 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    {{--<script src="{{ asset('js/app.js') }}"></script>--}}
+    <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
+    <script type="text/javascript">
+        $(function() {
+            let $flag = $('#registration');
+            let $input = $flag.closest('form').find('input[name="email"]');
+
+            $input.on('blur', function() {
+                //console.log($(this).val());
+
+                $.ajax({
+                    url:'/emailjs',
+                    type:'get',
+                    data: {
+                        'email': $input.val(),
+                        // '_token': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(res) {
+                      console.log(res);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+
+                });
+            });
+
+
+
+
+            /*$('#registration').on('click', function(e) {
+
+                $name = $(this).closest('form').find('input');
+                console.log($name);
+                e.preventDefault();
+            });*/
+        });
+    </script>
+
+    {{--<script type="text/javascript"> // TODO: sleeping->mai day som lam--}}
+        {{--$.ajaxSetup({--}}
+            {{--headers: {--}}
+                {{--'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
+            {{--}--}}
+        {{--});--}}
+    {{--</script>--}}
 </body>
 </html>

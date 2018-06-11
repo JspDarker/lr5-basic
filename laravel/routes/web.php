@@ -48,3 +48,4 @@ Route::get('ajax',function(){
 });
 
 Route::get('search', 'AjaxController@search');
+Route::get('emailjs', 'AjaxController@emailRegistration');

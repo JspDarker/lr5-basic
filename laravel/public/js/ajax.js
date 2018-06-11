@@ -11,7 +11,7 @@ $(function() {
             url: "/search",
             data: {
                 'product': $product,
-                '_token': $('meta[name="csrf-token"]').attr('content')
+                //'_token': $('meta[name="csrf-token"]').attr('content')
             },
             success: function(res) {
                 console.log(res);
